@@ -32,7 +32,7 @@ app.use(
 );
 app.use(bodyParser.json({ limit: "50mb" }));
 
-//app.use(morgan(process.env.NODE_ENV === "production" ? "combined" : "dev"));
+app.use(morgan(process.env.NODE_ENV === "production" ? "combined" : "dev"));
 
 // Use routes
 app.use("/api/users", users);
