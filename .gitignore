@@ -4,6 +4,6 @@ jspm_packages/
 
 package-lock.json
 
-# /config/keys_dev.js
+/config/keys_dev.js
 # dotenv environment variables file
-# .env
+.env
