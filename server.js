@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const passport = require("passport");
 //const mongoose = require("./db-config");
+const path = require("path");
 
 const users = require("./routes/api/users");
 const profile = require("./routes/api/profile");
