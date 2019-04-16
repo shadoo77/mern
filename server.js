@@ -32,7 +32,7 @@ app.use(
 );
 app.use(bodyParser.json({ limit: "50mb" }));
 
-app.use(morgan(process.env.NODE_ENV === "production" ? "combined" : "dev"));
+//app.use(morgan(process.env.NODE_ENV === "production" ? "combined" : "dev"));
 
 // Use routes
 app.use("/api/users", users);
@@ -46,11 +46,11 @@ require("./config/passport")(passport);
 // Server static assets if in production
 if (process.env.NODE_ENV === "production") {
   // Set static folder
-  app.use(express.static("client/build"));
+  app.use(express.static(path.join(__dirname, "client/build")));
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
+  app.get("*", (req, res) =>
+    res.sendFile(path.join(__dirname + "/client/build/index.html"))
+  );
 }
 
 const server = {
